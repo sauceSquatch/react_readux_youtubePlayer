@@ -10,8 +10,22 @@ import React from 'react';
 
 // ES6 way, by doing this it's saying there is a props.video property, please make a new var called the same name video
 const VideoListItem = ({video}) => {
-  console.log(video);
-  return <li>video</li>
-}
+  
+  const imageURL = video.snippet.thumbnails.default.url;
+
+  return (
+      <li className="list-group-item">
+        <div className="video-list media">
+          <div className="media-left">
+            <img src={imageURL} className="media-object" />
+          </div>
+          <div className="media-body">
+            <div className="media-heading">{video.snippet.title}</div>
+          </div>
+        </div>
+        
+      </li>
+    );
+};
 
 export default VideoListItem;
