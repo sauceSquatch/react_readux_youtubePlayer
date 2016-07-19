@@ -9,12 +9,12 @@ import React from 'react';
 
 
 // ES6 way, by doing this it's saying there is a props.video property, please make a new var called the same name video
-const VideoListItem = ({video}) => {
+const VideoListItem = ({video, onVideoSelect}) => {
   
   const imageURL = video.snippet.thumbnails.default.url;
 
   return (
-      <li className="list-group-item">
+      <li onClick={() => onVideoSelect(video)} className="list-group-item">
         <div className="video-list media">
           <div className="media-left">
             <img src={imageURL} className="media-object" />
